@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, TouchableOpacity, Alert, SafeAreaView } from 'react-native';
+import { Audio } from 'expo-av';
 
 const HomeScreen = ({ navigation }) => {
+
+
+
   const checkIfNum = (number) => {
     const validZip = /^[0-9]{5}(?:-[0-9]{4})?$/;
     return ( validZip.test(number) )
@@ -10,11 +14,11 @@ const HomeScreen = ({ navigation }) => {
   const handlePress = () => {
     Alert.prompt("Zip Code", "Gimmie dem digits ;)", (number) => {
       if(checkIfNum(number)) {
-        Alert.alert("nice dude", "good job");
+        Alert.alert("Get Ready!");
         navigation.navigate('BattleScreen')
 
       } else {
-        Alert.alert("wow u dumb bro", "bad job");
+        Alert.alert("I know I look good but I need your Zip Code, not your number!");
       }
     });
   };

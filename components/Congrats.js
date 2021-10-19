@@ -17,7 +17,8 @@ const Congrats = ({route: { params: { pic, category}}}) => {
   ]);
     return(
     <SafeAreaView style={styles.container}>
-      <Text>Congratulations, looks like you're eating {category[0]}!</Text>
+      <Text style={styles.congrats}>And our winner is:</Text>
+         <Text style={styles.type}>{category[0]}!</Text>
       <Image style={styles.image} source={pics[pic]} />
       <Image style={styles.belt} source={require('/Users/nicholasleon/hackreactor work/FoodFight/assets/Championship_Belt.png')}/>
       <Image style={styles.shorts} source={require('/Users/nicholasleon/hackreactor work/FoodFight/assets/shorts.jpeg')} />
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
+    zIndex: 2,
     maxWidth: '50%',
     maxHeight: '30%',
     resizeMode: 'contain',
@@ -39,14 +41,25 @@ const styles = StyleSheet.create({
   belt: {
     position: 'absolute',
     width: '50%',
-    bottom: 300,
+    bottom: 240,
     zIndex: 5,
   },
   shorts: {
+    zIndex: 1,
     position: 'absolute',
-    width: '70%',
+    width: '75%',
     resizeMode: 'contain',
     bottom: -90,
+  },
+  congrats: {
+    textAlign: 'center',
+    width: '70%',
+    fontSize: 20
+  },
+  type: {
+    fontSize: 40,
+    maxWidth: '90%',
+    fontFamily: 'Courier New'
   }
 });
 

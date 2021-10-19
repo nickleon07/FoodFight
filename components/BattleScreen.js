@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Button, TouchableOpacity, Alert, SafeAreaView } from 'react-native';
 import {useState} from 'react';
 
-const BattleScreen = ({ navigation}) => {
+const BattleScreen = ({ navigation }) => {
 
-  const [categories, setCategories] = useState(['Steakhouse', 'American (Traditional)', 'Pizza', 'Seafood', 'Breakfast', 'Italian', 'Vietnamese', 'Korean', 'French', 'Brazillian']);
+  const [categories, setCategories] = useState(['Steakhouse', 'American (Traditional)', 'Pizza', 'Seafood', 'Breakfast', 'Italian', 'Vietnamese', 'Korean', 'French', 'Brazillian', 'Greek']);
 
 
   const [pics, setPics] = useState([
@@ -17,13 +17,14 @@ const BattleScreen = ({ navigation}) => {
     require('/Users/nicholasleon/hackreactor work/FoodFight/assets/Vietnamese.jpeg'),
     require('/Users/nicholasleon/hackreactor work/FoodFight/assets/Korean.jpeg'),
     require('/Users/nicholasleon/hackreactor work/FoodFight/assets/French.jpeg'),
-    require('/Users/nicholasleon/hackreactor work/FoodFight/assets/Brazillian.jpeg')
+    require('/Users/nicholasleon/hackreactor work/FoodFight/assets/Brazillian.jpeg'),
+    require('/Users/nicholasleon/hackreactor work/FoodFight/assets/greek.jpeg')
   ]);
 
-  const [picStrings, setString] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+  const [picStrings, setString] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
   if(pics.length === 1) {
-    navigation.navigate('Congrats', {pic: picStrings, category: categories});
+    navigation.navigate('PriceScreen', {pic: picStrings, category: categories});
   }
 
   const handlePressBot = () => {
